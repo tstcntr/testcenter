@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Прототип веб-приложения</title>
+<link href="https://cdn.tailwindcss.com" rel="stylesheet">
+<!-- Импорт шрифта Google -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon -->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<header class="bg-white shadow" style="background-color: #197888; color: white;">
+  <nav class="container mx-auto px-6 py-3">
+    <div class="flex justify-between items-center">
+      <!-- Логотип и брендинг -->
+      <div class="flex items-center">
+        <div class="h-8 w-8 bg-gray-300 mr-3"></div>
+        <span class="font-semibold text-gray-700 text-lg" >Национальный центр тестирования Тел: 8 (7172) 69-50-69  uto@testcenter.kz</span>
+      </div>
+      <!-- Выбор языка -->
+      <div class="flex items-center">
+        <select class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500">
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+          <!-- Дополнительные языки -->
+        </select>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="container mx-auto my-8">
+  <div class="flex flex-wrap -mx-2">
+    <!-- Левая колонка: Функциональность поиска -->
+    <div class="w-full lg:w-1/3 px-2 mb-4">
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="text-lg font-semibold text-gray-700 mb-4">Поиск по идентификатору</h2>
+        <div class="mb-4">
+          <label for="year" class="block text-sm font-medium text-gray-700">Год</label>
+          <select id="year" name="year" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+            <option>2024</option>
+            <!-- Дополнительные года -->
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="identifier" class="block text-sm font-medium text-gray-700">Введите ИИН</label>
+          <input type="text" id="identifier" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="Идентификатор">
+        </div>
+        <div>
+          <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Искать</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Центральная колонка: Данные сертификата -->
+    <div class="w-full lg:w-1/3 px-2 mb-4">
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="text-lg font-semibold text-gray-700 mb-4">Данные сертификата</h2>
+        <div class="mb-4">
+          <p class="text-sm text-gray-600">Имя: <span class="text-gray-900">МАТЫБАЕВ ТИМУР БАЛТАБАЕВИЧ</span></p>
+          <p class="text-sm text-gray-600">ИИН: <span class="text-gray-900">770828300813</span></p>
+          <p class="text-sm text-gray-600">ИКТ: <span class="text-gray-900">000246716</span></p>
+          <p class="text-sm text-gray-600">Вид тестирования: <span class="text-gray-900">ОЗП</span></p>
+          <p class="text-sm text-gray-600">Год тестирования: <span class="text-gray-900">2020</span></p>
+          <p class="text-sm text-gray-600">Язык сдачи тестирования: <span class="text-gray-900">Казахский</span></p>
+          <p class="text-sm text-gray-600">Категория: <span class="text-gray-900">Педагог-эксперт</span></p>
+          <p class="text-sm text-gray-600">Результат теста: <span class="text-gray-900">Пройден</span></p>
+          <p class="text-sm text-gray-600">Действителен до: <span class="text-gray-900">19.12.2021</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Правая колонка: Предметы теста и результаты -->
+    <div class="w-full lg:w-1/3 px-2 mb-4">
+      <div class="bg-white p-5 rounded-lg shadow">
+        <h2 class="text-lg font-semibold text-gray-700 mb-4">Предметы тестирования</h2>
+        <ul class="divide-y divide-gray-200 mb-4">
+          <li class="py-2 flex justify-between">
+            <span class="text-sm text-gray-600">Физическая культура</span>
+            <span class="text-sm text-gray-900">41</span>
+          </li>
+          <li class="py-2 flex justify-between">
+            <span class="text-sm text-gray-600">Педагогика, методика обучения</span>
+            <span class="text-sm text-gray-900">30</span>
+          </li>
+          <li class="py-2 flex justify-between">
+            <span class="text-sm text-gray-600">Общий балл по предметам</span>
+            <span class="text-sm text-gray-900">71</span>
+          </li>
+          <!-- Дополнительные предметы теста -->
+        </ul>
+        <div>
+          <button class="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Скачать документ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-white shadow">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex justify-between items-center">
+      <p class="text-sm text-gray-500">&copy;</p>
+      <!-- Дополнительный контент в футере -->
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
