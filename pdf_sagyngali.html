@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <style>
+        /* Ensures the PDF takes up the whole page with no margins */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #pdf-viewer {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="pdf-viewer"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.216/pdf.min.js"></script>
+    <script>
+        var url = 'Сагынгали.pdf';  // Path to your PDF file
+
+        var loadingTask = pdfjsLib.getDocument(url);
+        loadingTask.promise.then(function(pdf) {
+            pdf.getPage(1).then(function(page) {
+                var scale = 1.5;
+                var viewport = page.getViewport({scale: scale});
+
+                var canvas = document.createElement('canvas');
+                var context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                var renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+                var renderTask = page.render(renderContext);
+                renderTask.promise.then(function () {
+                    document.getElementById('pdf-viewer').appendChild(canvas);
+                });
+            });
+        }, function (reason) {
+            console.error(reason);
+        });
+    </script>
+</body>
+</html>
